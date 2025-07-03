@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  body {
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  background: #fef6e4;
+}
+
+.cartoon {
+  margin: 40px auto;
+  width: 200px;
+  position: relative;
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  background: #fcd5ce;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #333;
+}
+
+.eye {
+  width: 25px;
+  height: 25px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+}
+
+.left {
+  left: 50px;
+}
+
+.right {
+  right: 50px;
+}
+
+.smile {
+  width: 100px;
+  height: 50px;
+  border-bottom: 4px solid #333;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hand {
+  width: 40px;
+  height: 100px;
+  background: #fcd5ce;
+  position: absolute;
+  left: -50px;
+  top: 80px;
+  border-radius: 20px;
+  transform-origin: top right;
+  transition: transform 0.4s ease;
+  border: 3px solid #333;
+}
+
+/* Waving Animation */
+.wave {
+  transform: rotate(-45deg);
+}
+
+  <title>Cartoon Character</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Cartoon Friend</h1>
+  <div class="cartoon">
+    <div class="face">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="smile"></div>
+    </div>
+    <div class="hand" id="hand"></div>
+  </div>
+  <button onclick="waveHand()">Wave 👋</button>
+
+  <script src="script.js"></script>
