@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expression Cartoon</title>
+  <style>
+    body {
+      text-align: center;
+      background: #81baed;
+      font-family: sans-serif;
+    }
+
+    .face {
+      width: 200px;
+      height: 200px;
+      background: #0536bd;
+      border-radius: 50%;
+      margin: 100px auto;
+      position: relative;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .eye {
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+    }
+
+    .eye.left {
+      left: 50px;
+    }
+
+    .eye.right {
+      right: 50px;
+    }
+
+    .mouth {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      border: 4px solid black;
+      border-top: none;
+      border-radius: 50px 50px;
+      transition: all 0.4s ease;
+    }
+
+    .expression-happy .mouth {
+      border-radius: 0 0 50px 50px;
+      border-bottom: 4px solid black;
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    .expression-sad .mouth {
+      border-radius: 50px 50px 0 0;
+      border-top: 4px solid black;
+      border-bottom: none;
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    .expression-angry .eye::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: rgb(243, 12, 12);
+      top: -10px;
+      left: 0;
+      transform: rotate(-20deg);
+    }
+
+    .expression-angry .eye.right::after {
+      transform: rotate(20deg);
+    }
+
+    .expression-surprised .mouth {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 4px solid black;
+      bottom: 60px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 23px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cartoon" class="face expression-happy">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="mouth"></div>
+  </div>
+
+  <button onclick="changeExpression()">Change Expression</button>
+
+  <script>
+    const expressions = ['happy', 'sad', 'angry', 'surprised'];
+    let index = 0;
+
+    function changeExpression() {
+      const face = document.getElementById('cartoon');
+      // Remove existing expression classes
+      expressions.forEach(expr => face.classList.remove('expression-' + expr));
+      // Update index
+      index = (index + 1) % expressions.length;
+      // Add new expression class
+      face.classList.add('expression-' + expressions[index]);
+    }
+  </script>
+
+</body>
+</html>

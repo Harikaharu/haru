@@ -1,0 +1,6 @@
+function printAll(a,b,c,....numbers) {
+for(var i=0;i<numbers.length;i++) {
+console.log(numbers[i])
+}
+}
+printAll(10,20,30,40,50)

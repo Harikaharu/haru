@@ -1,0 +1,17 @@
+> ai stack
+. mern-frotend(html,css,java script) backend(node.js+db)
+. python fullstack-frontend() backend(dji+db).
+> ai-ml-dp-gen ai.
+
+
+> working directory             > stuging area        >local reposition    >remote repository
+code.py      (git init,git add)  code.py (git commit) code.py (git push)    code.py
+  
+1 git init
+2 gitadd
+3 git states
+4 git commit(first file)
+5 git  add remote(url.)
+6 git 
+
+https:/gitHub.com/NarendarPaindla/myfirstfiles
